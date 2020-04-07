@@ -1,0 +1,231 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.contenitorePrincipale{
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.greenBar{
+  width: 100%;
+  height: 15%;
+  background-color: rgb(0,150,136);
+}
+
+.graySquare{
+  width: 100%;
+  height: 85%;
+  background-color: #d8dbd5;
+}
+
+.mainContWhatapp{
+  width: 80%;
+  height: 95%;
+  background-color: yellow;
+  position: absolute;
+  top:2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+/* Colonna sinistra con barra Owner + ricerca + chat contatti */
+.colonnaOwnerContatti{
+  width: 35%;
+  height: 100%;
+  background-color: red;
+  border-right: 2px solid #6b7376;
+}
+.ownerMainBox{
+  height: 10%;
+  width: 100%;
+  background-color: #e9ebeb;
+  display: flex;
+  /* position: fixed; */
+}
+.OwnerAvatar{
+  width: 50%;
+}
+.OwnerAvatar img{
+  height: 60px;
+  width: 60px;
+  border-radius: 100%;
+  margin-top: 5px;
+
+}
+.iconeDestra{
+  width: 50%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+/* Dimensione/Colore icone */
+.iconeDestra i{
+  font-size: 20PX;
+  padding-left: 15px;
+  color: #b1b1b1;
+
+}
+
+/* Container Notifiche */
+.notificationsBox{
+  height: 12%;
+  width: 100%;
+  background-color: #8edafc;
+  display: flex;
+  align-items: center;
+
+}
+.IconBellBox{
+  width: 15%;
+}
+/* proprietà icona campana notifiche */
+.IconBellBox i{
+  font-size: 20pX;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+  border: 2px solid white;
+  border-radius: 70%;
+  background-color: white;
+  color: #8edafc;
+}
+/* Contenitore scritte RICEVI NOTIFICHE E ATTIVA NOTIFICHE */
+.textRicNot{
+  width: 80%;
+}
+.textRicNot h6{
+  font-size: 18px;
+  font-weight: normal;
+}
+.textRicNot a{
+  color: #74888b;
+}
+/* Contenitore con inpute per ricerca o iniza conversazione */
+.ricercaIniza{
+  height: 5%;
+  width: 100%;
+  background-color: yellow;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contInputIcon{
+  width: 80%;
+  height: 80%;
+  background-color: white;
+  margin-left: 5px;
+}
+/* contenitore icona lente input */
+.contInputIcon input{
+  width: 80%;
+  height: 80%;
+  border: 2px solid white;
+  display: inline-block;
+
+}
+.contInputIcon i{
+  height: 100%;
+  width: 10%;
+  font-size: 20px;
+  display: inline-block;
+  margin-top: 5px;
+  margin-left: 5px;
+
+}
+
+
+/* Colonna parte conversazioni*/
+.colonnaConversazioni{
+  width: 65%;
+  height: 100%;
+  background-color: rgb(85, 10, 231);
+}
+
+/* barra conversazione aperta */
+.conversationOpened{
+  height: 10%;
+  width: 100%;
+  background-color: #e9ebeb;
+  display: flex;
+  align-items: center;
+}
+/* Imm della persona con cui stiamo chattando  */
+.fotoConvOpened{
+  width: 10%;
+}
+.fotoConvOpened img{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  margin-left: 10px;
+}
+.textToticone{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+
+}
+.iconeConvOpened i{
+  font-size: 20pX;
+  padding-left: 15px;
+  color: #b1b1b1;
+
+}
+
+.iconeConvOpened{
+  margin-right: 20px;
+}
+
+.textConvOpened h6{
+  font-size: 18px;
+  font-weight: normal;
+  padding-bottom: 3px;
+}
+.textConvOpened p{
+  color: #74888b;
+}
+.contCentrConv{
+  height: 80%;
+  width: 100%;
+  background-image: url(img/sfondochat.jpg);
+  overflow-y: scroll;
+}
+
+.parteBassa{
+  height: 10%;
+  width: 100%;
+  background-color: #f3eeea;
+  display: flex;
+  justify-content: center;
+  /* align-items: baseline; */
+
+}
+.parteBassa i{
+  width: 10%;
+  height: 80%;
+  font-size: 25PX;
+  color: #6b7376 ;
+  text-align: center;
+  margin-top: 20px;
+
+
+}
+.parteBassa input{
+  height: 70%;
+  width: 80%;
+  border-radius:5px;
+  margin-top: 10px;
+  border: 0;
+
+
+}
