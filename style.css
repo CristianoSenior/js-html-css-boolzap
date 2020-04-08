@@ -41,7 +41,7 @@
   border-right: 2px solid #6b7376;
 }
 .ownerMainBox{
-  height: 10%;
+  height: 70px;
   width: 100%;
   background-color: #e9ebeb;
   display: flex;
@@ -74,7 +74,7 @@
 
 /* Container Notifiche */
 .notificationsBox{
-  height: 12%;
+  height: 100px;
   width: 100%;
   background-color: #8edafc;
   display: flex;
@@ -108,19 +108,23 @@
 }
 /* Contenitore con inpute per ricerca o iniza conversazione */
 .ricercaIniza{
-  height: 5%;
+  height: 70px;
   width: 100%;
-  background-color: yellow;
+  background-color: #fafafa;
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 
 .contInputIcon{
-  width: 80%;
+  width: 94%;
   height: 80%;
   background-color: white;
   margin-left: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 127, 142, 0.71);
+
 }
 /* contenitore icona lente input */
 .contInputIcon input{
@@ -129,18 +133,57 @@
   border: 2px solid white;
   display: inline-block;
 
+
 }
 .contInputIcon i{
   height: 100%;
   width: 10%;
   font-size: 20px;
   display: inline-block;
-  margin-top: 5px;
+  margin-top: 10px;
   margin-left: 5px;
-
+}
+.listaContatti{
+  height: calc(100% -70px -100px -50px);
+  width: 100%;
+  background-color: orange;
+}
+.primoContatto{
+  height: 15%;
+  width: 100%;
+  display: flex;
+  border: 2px solid black;
+  background-color: red;
+  align-items: center;
+}
+.imgContatto img{
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 
+.nomeOrario{
+  height: 50%;
+  width: 100%;
 
+
+}
+.nomeOrario h6{
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+.staccatevi{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.testoInterno{
+  margin-left: 10px;
+}
 /* Colonna parte conversazioni*/
 .colonnaConversazioni{
   width: 65%;
@@ -150,7 +193,7 @@
 
 /* barra conversazione aperta */
 .conversationOpened{
-  height: 10%;
+  height: 70px;
   width: 100%;
   background-color: #e9ebeb;
   display: flex;
@@ -166,6 +209,7 @@
   border-radius: 100%;
   margin-left: 10px;
 }
+
 .textToticone{
   width: 90%;
   display: flex;
@@ -195,14 +239,33 @@
   color: #74888b;
 }
 .contCentrConv{
-  height: 80%;
+  height: calc(100% - 70px - 80px);
   width: 100%;
   background-image: url(img/sfondochat.jpg);
+  background-size: cover;
   overflow-y: scroll;
+  display: flex;
+ align-items: center;
 }
+.contenitoreMsg{
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+.msgdisplayflex{
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.msginviato{
+  background-color: lightgreen;
+  padding: 10px;
+  border-radius: 10px;
+ }
 
 .parteBassa{
-  height: 10%;
+  height: 80px;
   width: 100%;
   background-color: #f3eeea;
   display: flex;
