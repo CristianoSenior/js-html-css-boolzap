@@ -269,7 +269,7 @@
    margin-top: -5px;
    float:right;
    clear: both;
-   display: none;
+   /* display: none; */
  }
  .msgricevuto{
    background-color: white;
@@ -286,9 +286,11 @@
     margin-top: -5px;
     float:left;
     clear: both;
+    /* display: none; */
+  }
+  .cancella{
     display: none;
   }
-
 
 .parteBassa{
   height: 80px;

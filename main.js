@@ -52,7 +52,7 @@ $(document).ready(function(){
   var cancella = $(".cancella");
   freccina.click(
     function(){
-      $(this).parent("div + .cancella").toggle();
+      $(this).parents("div.incomune").siblings('div.cancella').toggle();
     }
 
   )
