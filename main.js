@@ -4,16 +4,18 @@ $(document).ready(function(){
   var input = $('.parteBassa input');
   var div = $('.contenitoreMsg');
   var inputdiv = $ ('.contInputIcon input')
+
   send.click(
     function () {
       console.log(input.val());
-      div.append('<div class = "msginviato incomune"><span>'+input.val()+'</span><span><i class="fa fa-chevron-down"></i></span></div>');
+      div.append('<div class = "msginviato incomune"><span>'+input.val()+'</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsginviato cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
+
       input.val("");
       //dopo un secondo ok
       // deve apparire un nuovo msg con un testo sempre uguale (statico) ok
       setTimeout(
         function(){
-        div.append('<div class = "msgricevuto incomune"><span>ok</span><span><i class="fa fa-chevron-down"></i></span></div>');
+        div.append('<div class = "msgricevuto incomune"><span>ok</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsgricevuto cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
       },1000);
 
     }
@@ -48,21 +50,44 @@ $(document).ready(function(){
     )
     // Cancella messaggio:
     //cliccando sul messaggio appare un menu a tendina
-  var freccina = $(".incomune span i");
+  var freccina = $(".arrow");
   var cancella = $(".cancella");
-  freccina.click(
-    function(){
-      $(this).parents("div.incomune").siblings('div.cancella').toggle();
-    }
-
-  )
+  // freccina.click(
+  //   function(){
+  //     $(this).parent().siblings('.cancella').toggle();
+  //   }
+  //
+  // )
   //   che permette di cancellare il messaggio selezionato
+  $('.contenitoreMsg').on('click', '.arrow',
+    function(){
+      console.log(this);
+      $(this).parent().siblings('.cancella').toggle();
+    }
+  )
+  $(".contenitoreMsg").on('click','.Cmsg',
+    function(){
+      console.log(this);
+      $(this).parents(".incomune").remove();
+    }
+  )
+
 });
 
 //Click sul contatto mostra la conversazione del contatto cliccato
 // click sul contatto che ha data-attr che corrisponde a stesso data-attr in chat
 // salvo il valore dell’attr e lo usso per dire quale chat è attiva
 // è possibile inserire nuovi messaggi per ogni conversazione [attiva]
+
+$('.primoContatto').click(
+  function(){
+    var data = $(this).data('indice');
+    console.log(data);
+    // $('.primoContatto').removeClass('.active');
+    // $(this).addClass('active');
+
+  }
+);
 
 
 // son riuascito ad agganciarte l’evento sul “delete” potrò dirgli una roba tipo this.padre.cancella();

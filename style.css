@@ -157,6 +157,10 @@
   background-color: red;
   align-items: center;
 }
+.primoContatto:hover{
+  background-color: rgba(119, 85, 56, 0.62)
+
+}
 .imgContatto img{
   height: 50px;
   width: 50px;
@@ -199,6 +203,7 @@
   background-color: #e9ebeb;
   display: flex;
   align-items: center;
+
 }
 /* Imm della persona con cui stiamo chattando  */
 .fotoConvOpened{
@@ -260,6 +265,7 @@
   border-radius: 10px;
   float:right;
   clear: both;
+  position: relative;
  }
  .cancellamsginviato{
    width: 150px;
@@ -269,6 +275,7 @@
    margin-top: -5px;
    float:right;
    clear: both;
+
    /* display: none; */
  }
  .msgricevuto{
@@ -277,6 +284,7 @@
    border-radius: 10px;
    float: left;
    clear: both;
+   position: relative;
   }
   .cancellamsgricevuto{
     width: 150px;
@@ -288,8 +296,17 @@
     clear: both;
     /* display: none; */
   }
-  .cancella{
+  .sparisci{
     display: none;
+  }
+  .sparisci.active{
+    display: inline-block;
+  }
+  .cancella{
+    position: absolute;
+    display: none;
+
+
   }
 
 .parteBassa{
