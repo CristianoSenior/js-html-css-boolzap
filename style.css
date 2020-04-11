@@ -300,7 +300,15 @@
     display: none;
   }
   .sparisci.active{
-    display: inline-block;
+    display: block;
+  }
+  .boxMittenteMessaggi{
+    width: 100%;
+    height: calc(100% - 150px);
+    display: none;
+  }
+  .boxMittenteMessaggi.active{
+    display: block;
   }
   .cancella{
     position: absolute;

@@ -83,9 +83,10 @@ $('.primoContatto').click(
   function(){
     var data = $(this).data('indice');
     console.log(data);
-    // $('.primoContatto').removeClass('.active');
-    // $(this).addClass('active');
-
+    $('.primoContatto').removeClass('.active');
+    $(this).addClass('active');
+    $('.boxMittenteMessaggi').removeClass('active');
+    $('.boxMittenteMessaggi').eq(data).addClass('active');
   }
 );
 
