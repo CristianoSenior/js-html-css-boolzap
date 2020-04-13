@@ -1,25 +1,47 @@
 $(document).ready(function(){
 
   var send = $('i.send');
-  var input = $('.parteBassa input');
-  var div = $('.contenitoreMsg');
-  var inputdiv = $ ('.contInputIcon input')
-
-  send.click(
+  var aereo = $('.fas.fa-paper-plane.sostituto');
+  var inputdiv = $ ('.contInputIcon input');
+  var x = $('.parteBassa span');
+  x.click(
     function () {
+      var input = $('.parteBassa input');
+      var div = $('.boxMittenteMessaggi.active');
       console.log(input.val());
-      div.append('<div class = "msginviato incomune"><span>'+input.val()+'</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsginviato cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
+      // div.each(
+      //   function () {
+      div.find('.contenitoreMsg').append('<div class = "msginviato incomune"><span>'+input.val()+'</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsginviato cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
 
       input.val("");
-      //dopo un secondo ok
-      // deve apparire un nuovo msg con un testo sempre uguale (statico) ok
+
+
       setTimeout(
         function(){
-        div.append('<div class = "msgricevuto incomune"><span>ok</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsgricevuto cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
+        div.find('.contenitoreMsg').append('<div class = "msgricevuto incomune"><span>ok</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsgricevuto cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
       },1000);
+    });
+      // dopo un secondo ok
+      // deve apparire un nuovo msg con un testo sempre uguale (statico) ok
+    var input = $('.parteBassa input');
 
-    }
-  );
+    input.focus(
+      function (){
+        var send = $('.fas.fa-microphone.send');
+        var aereo = $('.fas.fa-paper-plane.sostituto');
+        send.hide();
+        aereo.show();
+      });
+      input.blur(
+        function (){
+          var send = $('.fas.fa-microphone.send');
+          var aereo = $('.fas.fa-paper-plane.sostituto');
+          aereo.hide();
+          send.show();
+        });
+
+
+
   // filtro contatti
     //gestirte evento su tastiera (oppure su click di bottone di input ricerca)
     inputdiv.keyup(
@@ -68,7 +90,9 @@ $(document).ready(function(){
   $(".contenitoreMsg").on('click','.Cmsg',
     function(){
       console.log(this);
-      $(this).parents(".incomune").remove();
+      // $(this).parents(".incomune").html('<i class="fas fa-ban"></i>quetso messaggio è stato cancellato').css('background','rgb(82, 83, 82)').css('color','rgb(234, 241, 239)');
+      // $(this).parents(".incomune").replaceWith('<div class="messaggiocancellato"><i class="fas fa-ban"></i>quetso messaggio è stato cancellato</div>');
+      $(this).parents(".incomune").html('<i class="fas fa-ban"></i>quetso messaggio è stato cancellato').addClass('messaggiocancellato');
     }
   )
 
@@ -83,14 +107,15 @@ $('.primoContatto').click(
   function(){
     var data = $(this).data('indice');
     console.log(data);
-    $('.primoContatto').removeClass('.active');
-    $(this).addClass('active');
+    $('.primoContatto').removeClass('active selezionatoCol');
+    $(this).addClass('active selezionatoCol');
     $('.boxMittenteMessaggi').removeClass('active');
     $('.boxMittenteMessaggi').eq(data).addClass('active');
+
   }
 );
-
-
+// }
+// );
 // son riuascito ad agganciarte l’evento sul “delete” potrò dirgli una roba tipo this.padre.cancella();
 // $(‘.right-messages’).on(“click”, “.message”,
 // function () {

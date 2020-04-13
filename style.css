@@ -37,7 +37,7 @@
 .colonnaOwnerContatti{
   width: 35%;
   height: 100%;
-  background-color: red;
+  background-color: white;
   border-right: 2px solid #6b7376;
 }
 .ownerMainBox{
@@ -51,10 +51,11 @@
   width: 50%;
 }
 .OwnerAvatar img{
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   border-radius: 100%;
   margin-top: 5px;
+  margin-left: 5px;
 
 }
 .iconeDestra{
@@ -153,14 +154,18 @@
   height: 100px;
   width: 100%;
   display: flex;
-  border: 2px solid black;
-  background-color: red;
+  border: 2px solid #F5F5F5;
+  background-color: white;
   align-items: center;
 }
 .primoContatto:hover{
-  background-color: rgba(119, 85, 56, 0.62)
+  background-color: rgb(233,235,235);
 
 }
+.selezionatoCol{
+  background-color: rgb(233,235,235);
+}
+
 .imgContatto img{
   height: 50px;
   width: 50px;
@@ -245,13 +250,13 @@
   color: #74888b;
 }
 .contCentrConv{
-  height: calc(100% - 150px);
+  height: calc( 100% - 70px );
   width: 100%;
   background-image: url(img/sfondochat.jpg);
   background-size: cover;
   overflow-y: scroll;
   display: flex;
- align-items: center;
+  align-items: center;
 }
 .contenitoreMsg{
   width: 80%;
@@ -278,6 +283,9 @@
 
    /* display: none; */
  }
+ .Cmsg{
+   cursor: pointer;
+ }
  .msgricevuto{
    background-color: white;
    padding: 10px;
@@ -296,15 +304,15 @@
     clear: both;
     /* display: none; */
   }
-  .sparisci{
-    display: none;
-  }
-  .sparisci.active{
-    display: block;
+
+  .messaggiocancellato{
+    background-color: rgba(118, 124, 122, 0.89);
+    /* padding: 10px;
+    border-radius: 10px; */
   }
   .boxMittenteMessaggi{
     width: 100%;
-    height: calc(100% - 150px);
+    height: calc( 100% - 80px);
     display: none;
   }
   .boxMittenteMessaggi.active{
@@ -323,18 +331,18 @@
   background-color: #f3eeea;
   display: flex;
   justify-content: center;
+
   /* align-items: baseline; */
 
 }
-.parteBassa i{
+.smile{
   width: 10%;
-  height: 80%;
   font-size: 25PX;
   color: #6b7376 ;
   text-align: center;
-  margin-top: 20px;
-
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .parteBassa input{
   height: 70%;
@@ -345,6 +353,7 @@
 
 
 }
+
 .fa.fa-chevron-down{
   display: none;
 
@@ -352,4 +361,16 @@
 
 .incomune:hover .fa.fa-chevron-down{
   display: inline-block;
+}
+.parteBassa span {
+  width: 10%;
+  font-size: 25PX;
+  color: #6b7376 ;
+  text-align: center;
+  margin-top: 20px;
+  /* display: none; */
+}
+
+.sostituto{
+  display: none;
 }
