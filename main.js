@@ -4,22 +4,46 @@ $(document).ready(function(){
   var aereo = $('.fas.fa-paper-plane.sostituto');
   var inputdiv = $ ('.contInputIcon input');
   var x = $('.parteBassa span');
+
+
+  $("#tastiera").keypress(
+    function(e) {
+      if(e.which == 13) {
+        tastierozza ()
+
+      }
+});
   x.click(
+
     function () {
       var input = $('.parteBassa input');
+      if (input.val()!=""){
+
+
+
+      var msg = input.val();
       var div = $('.boxMittenteMessaggi.active');
       console.log(input.val());
+      // Handlebars inizio
+      var source = $("#senior-template").html();
+      var template = Handlebars.compile(source);
+      var context = { "segnaposto1": msg,"segnaposto2":msginviato };
+      var html = template(context);
       // div.each(
       //   function () {
-      div.find('.contenitoreMsg').append('<div class = "msginviato incomune"><span>'+input.val()+'</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsginviato cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
-
+      div.find('.contenitoreMsg').append( html );
       input.val("");
+
 
 
       setTimeout(
         function(){
-        div.find('.contenitoreMsg').append('<div class = "msgricevuto incomune"><span>ok</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsgricevuto cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
+          var msg = "ok";
+          var context = { "segnaposto1": msg,"segnaposto2":msgricevuto };
+          var html = template(context);
+        div.find('.contenitoreMsg').append(html);
       },1000);
+      }
     });
       // dopo un secondo ok
       // deve apparire un nuovo msg con un testo sempre uguale (statico) ok
@@ -96,7 +120,7 @@ $(document).ready(function(){
     }
   )
 
-});
+
 
 //Click sul contatto mostra la conversazione del contatto cliccato
 // click sul contatto che ha data-attr che corrisponde a stesso data-attr in chat
@@ -114,6 +138,33 @@ $('.primoContatto').click(
 
   }
 );
+
+function tastierozza () {
+  var input = $('.parteBassa input');
+  if (input.val()!=""){
+
+
+
+  var div = $('.boxMittenteMessaggi.active');
+  console.log(input.val());
+  // div.each(
+  //   function () {
+  div.find('.contenitoreMsg').append('<div class = "msginviato incomune"><span>'+input.val()+'</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsginviato cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
+
+  input.val("");
+
+
+  setTimeout(
+    function(){
+    div.find('.contenitoreMsg').append('<div class = "msgricevuto incomune"><span>ok</span><span><i class="fa fa-chevron-down arrow"></i></span><div class="cancellamsgricevuto cancella"><span class="Cmsg">cancella messaggio</span></div></div>');
+  },1000);
+  }
+}
+
+
+
+
+});
 // }
 // );
 // son riuascito ad agganciarte l’evento sul “delete” potrò dirgli una roba tipo this.padre.cancella();

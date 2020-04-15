@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/c2aa3ad4cf.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
     <link rel="stylesheet" href="style.css">
     <title></title>
   </head>
@@ -497,7 +498,7 @@
 
             <div class="parteBassa">
               <i class="far fa-smile-wink smile"></i>
-              <input type="text" name="" value="">
+              <input id="tastiera" type="text" name="" value="">
               <span><i class="fas fa-microphone send"></i>
               <i class="fas fa-paper-plane sostituto"></i>
             </span>
@@ -505,6 +506,19 @@
         </div>
       </div>
     </div>
+
+
+    <script id="senior-template" type="text/x-handlebars-template">
+      <div class = " {{segnaposto2}} incomune">
+        <span>{{segnaposto1}}</span>
+        <span><i class="fa fa-chevron-down arrow"></i></span>
+        <div class="cancellamsgricevuto cancella">
+          <span class="Cmsg">cancella messaggio</span>
+        </div>
+      </div>
+    </script>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script type="text/javascript" src="main.js">
   </script>
